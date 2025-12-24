@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+/* Winter Night Theme */
+:root {
+  --primary-gold: #ffd700;
+  --primary-blue: #a8d8ff;
+  --dark-bg: #0f1419;
+  --card-bg: #1a2332;
+  --text-light: #f8f9fa;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* Vignette background */
+@layer utilities {
+  .bg-radial-gradient {
+    background: radial-gradient(
+      circle at center,
+      transparent 0%,
+      rgba(15, 20, 25, 0.6) 100%
+    );
+  }
+
+  .text-handwritten {
+    font-family: 'Dancing Script', cursive;
+    letter-spacing: 0.5px;
+  }
+
+  .text-elegant {
+    font-family: 'Playfair Display', serif;
+  }
+
+  .glow-gold {
+    text-shadow: 0 0 20px rgba(255, 215, 0, 0.6),
+                 0 0 40px rgba(255, 215, 0, 0.3);
+  }
+
+  .glow-blue {
+    text-shadow: 0 0 20px rgba(168, 216, 255, 0.6),
+                 0 0 40px rgba(168, 216, 255, 0.3);
+  }
+}
+
+/* Snowfall Animation - Continuous */
+@keyframes snowfall-continuous {
+  0% {
+    transform: translateY(-10px) translateX(0) rotate(0deg);
+    opacity: 1;
+  }
+  10% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(calc(100vh + 10px)) translateX(0) rotate(360deg);
+    opacity: 0;
+  }
+}
+
+/* Gift Breathing Glow */
+@keyframes breathe {
+  0%, 100% {
+    box-shadow: 0 0 30px rgba(255, 215, 0, 0.4),
+                0 0 60px rgba(255, 215, 0, 0.2);
+  }
+  50% {
+    box-shadow: 0 0 50px rgba(255, 215, 0, 0.6),
+                0 0 100px rgba(255, 215, 0, 0.3);
+  }
+}
+
+@keyframes pulse-scale {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05);
+  }
+}
+
+/* Reduced motion support */
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* Smooth focus states for accessibility */
+button:focus-visible,
+div[role="button"]:focus-visible {
+  outline: 2px solid var(--primary-blue);
+  outline-offset: 2px;
+}
