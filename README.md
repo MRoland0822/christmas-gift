@@ -1,36 +1,126 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# 🎄 Christmas Gift Experience
 
-## Getting Started
+An interactive Christmas gift web app. Click the gift box to reveal personalized messages on flip cards with animations, snowfall, and ambient music.
 
-First, run the development server:
+---
+
+## 📸 Screenshots
+
+### Landing Page - Gift Box
+![Landing](docs/images/landing.png)
+
+### Cards Grid - Click to Flip
+![Cards](docs/images/cards.png)
+
+### Flipped Card - Reveal Message
+![Flipped](docs/images/flipped.png)
+
+### Completion Screen - Celebration
+![Completion](docs/images/completion.png)
+
+
+---
+
+## ✨ Features
+
+- 🎁 Interactive animated gift box
+- 🃏 3D flip card animations with messages
+- ❄️ Continuous snowfall & twinkling stars
+- 🎵 Auto-playing ambient music with toggle
+- 📱 Mobile-first responsive design
+- ♿ Accessible (keyboard nav, ARIA labels)
+
+---
+
+## 🚀 Quick Start
 
 ```bash
+# Clone & install
+git clone https://github.com/MRoland0822/christmas-gift-app.git
+cd christmas-gift-app
+npm install
+
+# Run locally
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+# Open http://localhost:3000
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+---
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## 🛠️ Tech Stack
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+- **Next.js 14** - React framework
+- **TypeScript** - Type safety
+- **Tailwind CSS** - Styling
+- **Framer Motion** - Animations
 
-## Learn More
+---
 
-To learn more about Next.js, take a look at the following resources:
+## 📁 Project Structure
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+```
+app/
+├── page.tsx                 # Main page
+├── layout.tsx               # Global layout
+├── globals.css              # Global styles
+└── components/
+    ├── GiftBox.tsx          # SVG gift
+    ├── CardGrid.tsx         # Card grid
+    ├── Card.tsx             # Flip card
+    ├── FinalMessage.tsx     # Completion
+    ├── Snowfall.tsx         # Snow animation
+    ├── MusicToggle.tsx      # Audio control
+    └── TwinklingStars.tsx   # Background stars
+public/
+└── audio/
+    └── Happy Christmas Background Music For Videos.mp3
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+---
 
-## Deploy on Vercel
+## 🎮 How to Use
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Click the gift box to open
+2. Click cards to flip and reveal messages
+3. Flip all cards to see the completion screen
+4. Toggle music with the button (top-right)
+5. Click "Open Again" to restart
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+## 🎨 Customize
+
+### Change Messages
+Edit `app/page.tsx`:
+```typescript
+const MESSAGES = [
+  '🎄 Your message here!',
+  '✨ Another message',
+];
+```
+
+### Change Colors
+Edit `app/globals.css`:
+```css
+:root {
+  --primary-gold: #ffd700;
+  --primary-blue: #a8d8ff;
+}
+```
+
+### Snowfall Intensity
+In `app/page.tsx`:
+```typescript
+<Snowfall intensity="light" />  // 'light' | 'medium' | 'heavy'
+```
+
+---
+
+## 🚀 Deploy to Vercel
+
+1. Push to GitHub
+2. Go to [vercel.com](https://vercel.com)
+3. Import your GitHub repo
+4. Click "Deploy"
+
+Done! Every push automatically redeploys.
